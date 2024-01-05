@@ -1,8 +1,22 @@
 const search = document.getElementById('search');
 
+const renderTopQueries = async (inputValue) => {
+    const cont = document.querySelector('.queries-cont');
+    cont.innerHTML = '';
+
+    const topQueries = await fetchSearchAnalytics(inputValue);
+    if(topQueries) {
+        topQueries.forEach((entry) => {
+            const list = document.createElement('li');
+            list.textContent = entry.query;
+            cont.appendChild(list);
+        });
+    }
+};
+
 const saveQuery = async (query) => {
   try {
-    const response = await fetch('http://127.0.0.1:3000/api/search', {
+    const response = await fetch('https://helpjuice-search-backend.onrender.com/api/search', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -12,6 +26,7 @@ const saveQuery = async (query) => {
 
     if (response.ok) {
       console.log('Query saved successfully');
+      renderTopQueries('');
     } else {
       throw new Error('Failed to save query');
     }
@@ -22,7 +37,7 @@ const saveQuery = async (query) => {
 
 const fetchSearchAnalytics = async (inputValue) => {
   try {
-    const response = await fetch(`http://127.0.0.1:3000/api/search_queries/analytics?query=${inputValue}`);
+    const response = await fetch(`https://helpjuice-search-backend.onrender.com/api/search_queries/analytics?query=${inputValue}`);
     if (!response.ok) {
       throw new Error('Failed to fetch data');
     }
@@ -30,20 +45,8 @@ const fetchSearchAnalytics = async (inputValue) => {
     return data.top_queries;
   } catch (error) {
     console.error('Error fetching data:', error);
-    return null;
+    return [];
   }
-};
-
-const renderTopQueries = async (inputValue) => {
-  const cont = document.querySelector('.queries-cont');
-  cont.innerHTML = '';
-
-  const topQueries = await fetchSearchAnalytics(inputValue);
-  topQueries.forEach((entry) => {
-    const list = document.createElement('li');
-    list.textContent = entry.query;
-    cont.appendChild(list);
-  });
 };
 
 const handleInputChange = (e) => {
@@ -55,7 +58,6 @@ const handleSearchChange = (e) => {
   const query = e.target.value;
   saveQuery(query);
   search.value = '';
-  renderTopQueries('');
 };
 
 search.addEventListener('input', handleInputChange);

@@ -20,7 +20,7 @@
 
 # 📖 Hotjuice-search-frontend: <a name="about-project"></a>
 
-> Hotjuice-search-frontend is a project built from vanilla JavaScript which enables users to search using queries and suggest them with their most searched query.
+> Hotjuice-search-frontend is a project built from vanilla JavaScript which enables users to search using queries and suggest them with their most searched query. It is part of full stack hepjuices-search project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -51,6 +51,15 @@
 > Link to deployed project.
 
 - [Live Demo Link]()
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- RAILS BACKEND -->
+
+## <img src="https://img.icons8.com/?size=512&id=ZMFmFsekpKfY&format=png" width="23" height="20"/> Rails Backend <a name="rails-backend"></a>
+
+- Helpjuice-search-backend [Helpjuice-search-backend](https://github.com/yodit93/Helpjuice-search-back-end)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
