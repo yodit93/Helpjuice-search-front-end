@@ -24,6 +24,10 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- VIDEO -->
+- To watch a demo, please click on [Video Link](https://drive.google.com/file/d/1__79aq_xMnzWmJWo8f87wq0RGLWM-sJL/view?usp=sharing)
+
+
 <!-- BUILT WITH -->
 
 ## 🛠 Built With <a name="built-with"></a>
@@ -50,7 +54,7 @@
 
 > Link to deployed project.
 
-- [Live Demo Link]()
+- [Live Demo Link](https://yodit93.github.io/Helpjuice-search-front-end/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
